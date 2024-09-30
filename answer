@@ -24,3 +24,30 @@ class Main {
 }
 
 //I've learned the code and practice it and revised it, since I was missing some syntax errors and logic error, because Ive done it in paper
+
+
+//Second solution, making it shorter as possible but I'm not sure if this is good for long term
+
+class Main {
+    public static void main(String[] args) {
+        int target = 9;
+        int[] nums = {2, 7, 11, 15};
+        int[] result = IndicesOfTwo(nums, target);
+
+        if (result != null) {
+            System.out.println("Indices: " + result[0] + " and " + result[1]);
+        } else {
+            System.out.println("No solution found.");
+        }
+    }
+
+    public static int[] IndicesOfTwo(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] + nums[i + 1] == target) {
+                return new int[]{i, i + 1};
+            }
+        }
+        return null;
+    }
+}
+
