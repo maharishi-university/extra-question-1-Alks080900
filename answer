@@ -1,15 +1,26 @@
 class Main {
     public static void main(String[] args) {
-        int answer [];
         int target = 9;
-        int nums [] = [2,7,11,15];
-        System.out.println(IndicesOfTwo(int nums[], int target))
-    }
-    public IndicesOfTwo(){
-        for (int i=0; i<nums.length(), i++){
-            if (target == a[i+1]){
-                return [a, i];
-            }
+        int[] nums = {2, 7, 11, 15};
+
+        int[] result = IndicesOfTwo(nums, target);
+        if (result != null) {
+            System.out.println("Indices: [" + result[0] + ", " + result[1] + "]");
+        } else {
+            System.out.println("No solution found.");
         }
     }
+
+    public static int[] IndicesOfTwo(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return null;
+    }
 }
+
+//I've learned the code and practice it and revised it, since I was missing some syntax errors and logic error, because Ive done it in paper
